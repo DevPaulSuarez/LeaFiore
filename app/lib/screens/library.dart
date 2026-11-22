@@ -84,7 +84,8 @@ class _LibraryScreenState extends State<LibraryScreen> {
           ),
           const SizedBox(height: 14),
           ChoiceChips<PlantCategory?>(
-            items: [(null, 'Todas'), for (final c in PlantCategory.values) (c, '${c.icon} ${c.label}')],
+            items: [(null, 'Todas'), for (final c in PlantCategory.values) (c, c.label)],
+            leading: (c) => c == null ? null : CategoryIcon(c, size: 18),
             value: _cat,
             onChanged: (v) => setState(() => _cat = v),
           ),

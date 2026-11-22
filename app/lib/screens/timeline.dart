@@ -79,8 +79,9 @@ class _TimelineScreenState extends State<TimelineScreen> {
             items: [
               (null, 'Todas'),
               for (final c in PlantCategory.values)
-                if (c != PlantCategory.interior) (c, '${c.icon} ${c.label}'),
+                if (c != PlantCategory.interior) (c, c.label),
             ],
+            leading: (c) => c == null ? null : CategoryIcon(c, size: 18),
             value: _cat,
             onChanged: (v) => setState(() => _cat = v),
           ),

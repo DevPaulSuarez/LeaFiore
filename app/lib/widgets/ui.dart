@@ -11,6 +11,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../data/library.dart';
 import '../models.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
@@ -155,6 +156,21 @@ class Emoji extends StatelessWidget {
   const Emoji(this.e, {super.key, this.size = 20});
   @override
   Widget build(BuildContext context) => Text(e, style: TextStyle(fontSize: size, height: 1.1));
+}
+
+/// Imagen 3D de una categoría; si falta el archivo muestra su emoji.
+class CategoryIcon extends StatelessWidget {
+  final PlantCategory category;
+  final double size;
+  const CategoryIcon(this.category, {super.key, this.size = 40});
+  @override
+  Widget build(BuildContext context) => Image.asset(
+        category.image,
+        width: size,
+        height: size,
+        filterQuality: FilterQuality.medium,
+        errorBuilder: (_, _, _) => Emoji(category.icon, size: size * .7),
+      );
 }
 
 /// Icono redondeado verde con un emoji.
@@ -410,7 +426,9 @@ class ChoiceChips<T> extends StatelessWidget {
   final List<(T, String)> items;
   final T value;
   final ValueChanged<T> onChanged;
-  const ChoiceChips({super.key, required this.items, required this.value, required this.onChanged});
+  /// Icono opcional delante del texto de cada chip.
+  final Widget? Function(T)? leading;
+  const ChoiceChips({super.key, required this.items, required this.value, required this.onChanged, this.leading});
 
   @override
   Widget build(BuildContext context) => Wrap(
@@ -427,7 +445,10 @@ class ChoiceChips<T> extends StatelessWidget {
                 borderRadius: BorderRadius.circular(99),
                 border: Border.all(color: on ? C.green600 : C.glassBorder),
               ),
-              child: Text(it.$2, style: TextStyle(fontSize: 13, color: on ? Colors.white : C.ink)),
+              child: Row(mainAxisSize: MainAxisSize.min, children: [
+                if (leading?.call(it.$1) case final icon?) ...[icon, const SizedBox(width: 6)],
+                Text(it.$2, style: TextStyle(fontSize: 13, color: on ? Colors.white : C.ink)),
+              ]),
             ),
           );
         }).toList(),

@@ -147,8 +147,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: const EdgeInsets.all(8),
                       onTap: () => openLibrary(context, category: c),
                       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                        Emoji(c.icon, size: 28),
-                        const SizedBox(height: 6),
+                        CategoryIcon(c, size: 46),
+                        const SizedBox(height: 4),
                         Text(c.label, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600)),
                       ]),
                     ),

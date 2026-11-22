@@ -24,6 +24,7 @@ Esta guía sirve para cambiar cosas de la app sin tener que leer todo el código
 | El fondo verde con hojas | `widgets/ui.dart` | `class LeafBackground` |
 | Los botones | `widgets/ui.dart` | `class Btn` y `class CircleBtn` |
 | El logo | `widgets/leaf_logo.dart` | `_LogoPainter` |
+| Las imágenes de las categorías | `app/assets/categorias/` | Reemplaza `interior.png`, `hidroponia.png`, `huerto.png`, `suculenta.png` o `flor.png` por otra PNG con el mismo nombre |
 | La altura de las tarjetas en «Mi jardín» | `screens/garden.dart:68` | `childAspectRatio` |
 
 ### Textos
@@ -176,6 +177,7 @@ Pantallas que se abren desde otras:
 |---|---|
 | `app/test/` | Pruebas automáticas. `widget_test.dart` prueba la lógica y `screens_test.dart` dibuja cada pantalla para detectar errores de diseño. |
 | `app/test/goldens/` | Capturas de cada pantalla que generan las pruebas. |
+| `app/assets/categorias/` | Imágenes 3D de las categorías ([Microsoft Fluent Emoji](https://github.com/microsoft/fluentui-emoji), licencia MIT). |
 | `app/android/` y `app/ios/` | Configuración nativa (permisos, nombre, icono). Rara vez hay que tocarla. |
 
 ---

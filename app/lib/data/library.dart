@@ -11,7 +11,9 @@
 /// Los tiempos son orientativos: dependen de la variedad, la luz y la temperatura.
 library;
 
-// ✏️ MODIFICAR: categorías (nombre e icono).
+// ✏️ MODIFICAR: categorías (nombre y emoji de respaldo).
+// La imagen de cada categoría está en assets/categorias/<nombre>.png
+// (p. ej. assets/categorias/flor.png). Reemplázala por otra PNG con el mismo nombre.
 enum PlantCategory {
   interior('Interior', '🪴'),
   hidroponia('Hidroponía', '💧'),
@@ -21,6 +23,9 @@ enum PlantCategory {
 
   const PlantCategory(this.label, this.icon);
   final String label, icon;
+
+  /// Imagen 3D de la categoría.
+  String get image => 'assets/categorias/$name.png';
 }
 
 /// Hito de crecimiento: cosecha, floración o planta formada.
