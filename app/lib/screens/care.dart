@@ -1,3 +1,10 @@
+// ═══ care.dart · PESTAÑA «CUIDADOS» ═══
+// Pestañas Hoy / Próximas / Hechas, tira de la semana y lista de tareas.
+//   _Week     → la tira de 7 días con puntito si hay tareas.
+//   _TaskRow  → fila de una tarea pendiente (tocar = posponer, círculo = completar).
+//   _DoneRow  → fila de una tarea ya hecha.
+// Las tareas se calculan en state/app_state.dart → allTasks().
+
 import 'package:flutter/material.dart';
 
 import '../data/library.dart';

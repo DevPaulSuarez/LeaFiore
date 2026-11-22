@@ -1,3 +1,8 @@
+// ═══ notifications.dart · RECORDATORIOS ═══
+// Programa una notificación diaria (a las _hour) con las tareas de ese día,
+// para los próximos 30 días. Se reprograma cada vez que se guardan datos.
+//   _details → canal y estilo de la notificación en Android/iOS.
+
 import 'dart:async';
 import 'dart:io';
 
@@ -17,6 +22,9 @@ class Notifications {
   static final instance = Notifications._();
 
   final _plugin = FlutterLocalNotificationsPlugin();
+  // ✏️ MODIFICAR: hora del aviso diario, hora límite de la noche y días a futuro.
+  static const _hour = 9, _quietAfter = 21, _daysAhead = 30;
+
   bool _ready = false;
   Timer? _debounce;
 
@@ -80,20 +88,21 @@ class Notifications {
       final tasks = state.allTasks();
       final now = tz.TZDateTime.now(tz.local);
 
-      for (var day = 0; day <= 30; day++) {
+      for (var day = 0; day <= _daysAhead; day++) {
         // Día 0 incluye las tareas atrasadas.
         final items = tasks.where((t) => day == 0 ? t.due <= 0 : t.due == day).toList();
         if (items.isEmpty) continue;
 
-        var when = tz.TZDateTime(tz.local, now.year, now.month, now.day + day, 9);
+        var when = tz.TZDateTime(tz.local, now.year, now.month, now.day + day, _hour);
         if (when.isBefore(now)) {
           if (day != 0) continue;
-          when = now.add(const Duration(minutes: 1)); // hoy ya pasaron las 9:00
-          if (now.hour >= 21) continue; // no molestar de noche
+          when = now.add(const Duration(minutes: 1)); // hoy ya pasó la hora del aviso
+          if (now.hour >= _quietAfter) continue; // no molestar de noche
         }
 
         final water = items.where((t) => t.task == CareTask.water).map((t) => t.plant.name).toList();
         final others = items.where((t) => t.task != CareTask.water).toList();
+        // ✏️ MODIFICAR: texto del aviso.
         final parts = <String>[
           if (water.isNotEmpty) 'Regar: ${water.join(', ')}',
           ...others.take(3).map((t) => '${t.task.label}: ${t.plant.name}'),

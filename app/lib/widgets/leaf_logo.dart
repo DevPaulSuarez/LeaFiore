@@ -1,3 +1,5 @@
+// ═══ leaf_logo.dart · LOGO (dibujado con código, sin imagen) ═══
+
 import 'package:flutter/material.dart';
 
 /// Logo de LeaFiore: un brote con cuatro hojas (dibujado, sin imágenes).

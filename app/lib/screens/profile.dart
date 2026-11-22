@@ -1,3 +1,7 @@
+// ═══ profile.dart · PESTAÑA «PERFIL» ═══
+// Nombre, clave de API de Claude, estadísticas, notificaciones, guías,
+// volver a ver la intro y borrar todos los datos.
+
 import 'package:flutter/material.dart';
 
 import '../services/notifications.dart';

@@ -1,3 +1,10 @@
+// ═══ diagnosis.dart · DIAGNÓSTICO CON IA (CLAUDE) ═══
+// Envía la foto a la API de Claude y convierte la respuesta en un Diagnosis.
+//   _model  → modelo de Claude usado.
+//   _system → instrucciones para la IA (✏️ cambia aquí su forma de responder).
+//   _schema → campos que la IA debe devolver (si añades uno, añádelo en models.dart).
+//   demo()  → resultados de ejemplo cuando no hay clave de API.
+
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
@@ -7,6 +14,7 @@ import '../models.dart';
 /// Diagnóstico de plantas por foto con Claude (visión).
 /// Dart no tiene SDK oficial de Anthropic, así que se usa la API HTTP directamente.
 class DiagnosisService {
+  // ✏️ MODIFICAR: modelo e instrucciones de la IA.
   static const _model = 'claude-opus-5-5';
   static final _url = Uri.parse('https://api.anthropic.com/v1/messages');
 
@@ -54,7 +62,7 @@ class DiagnosisService {
 
     final body = {
       'model': _model,
-      'max_tokens': 16000,
+      'max_tokens': 16000, // ✏️ largo máximo de la respuesta
       'fallbacks': 'default',
       'output_config': {
         'effort': 'medium',
@@ -108,6 +116,7 @@ class DiagnosisService {
   }
 
   /// Resultado de ejemplo para probar la app sin clave de API.
+  // ✏️ MODIFICAR: resultados de ejemplo (modo demo, sin clave de API).
   static Diagnosis demo(ScanMode mode) {
     if (mode == ScanMode.insecto) {
       return const Diagnosis(

@@ -1,3 +1,11 @@
+// ═══ home.dart · PESTAÑA «INICIO» ═══
+// Saludo, buscador, carrusel de plantas, cuidados de hoy, próximas cosechas,
+// «Explorar plantas» por categoría, tiempos de cultivo, últimos diagnósticos y guía.
+//   _harvests() → calcula qué plantas están cerca de cosecha/floración.
+//   PlantCard   → tarjeta de planta (se usa también en Mi jardín).
+//   ScanRow     → fila de un diagnóstico.
+// Para reordenar secciones, mueve los bloques dentro de build().
+
 import 'package:flutter/material.dart';
 
 import '../data/library.dart';
@@ -27,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final state = AppScope.of(context);
     final h = DateTime.now().hour;
+    // ✏️ MODIFICAR: saludo según la hora.
     final greet = h < 12 ? 'Buenos días' : (h < 20 ? 'Buenas tardes' : 'Buenas noches');
     final tasks = state.allTasks().where((t) => t.due <= 0).toList();
     final water = tasks.where((t) => t.task == CareTask.water).toList();

@@ -1,3 +1,9 @@
+// ═══ intro.dart · PANTALLA DE BIENVENIDA ═══
+// 3 diapositivas + campo para el nombre. Al terminar pide permiso de
+// notificaciones y abre la app. Se ve solo la primera vez (o desde Perfil).
+//   _slides     → textos de cada diapositiva (✏️ edítalos aquí).
+//   _BigLeaf    → la hoja grande dibujada del fondo.
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -17,6 +23,7 @@ class IntroScreen extends StatefulWidget {
 }
 
 class _IntroScreenState extends State<IntroScreen> {
+  // ✏️ MODIFICAR: (título, subtítulo, texto) de cada diapositiva de la intro.
   static const _slides = [
     ('LeaFiore', 'Lleva la naturaleza a casa', 'Plantas bonitas.\nEspacios felices.\nTú, mejor.'),
     ('Cuidados', 'Nunca olvides regar', 'Te avisamos cuándo regar, abonar,\npulverizar y girar cada planta.'),

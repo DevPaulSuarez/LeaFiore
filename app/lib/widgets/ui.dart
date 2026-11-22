@@ -1,3 +1,12 @@
+// ═══ ui.dart · COMPONENTES VISUALES REUTILIZABLES ═══
+// Piezas que se usan en todas las pantallas:
+//   LeafBackground → fondo verde con hojas.   Glass → tarjeta de cristal (glassmorphism).
+//   Btn / CircleBtn → botones.   Pill → etiqueta de color.   TopBar → cabecera.
+//   Segment → selector de pestañas.   ChoiceChips → chips.   GlassField → campo de texto.
+//   PlantThumb → miniatura de planta.   toast / showGlassSheet / confirm → avisos y diálogos.
+//   fmtDate / weekdays → formato de fechas.
+// Cambia el estilo aquí y se aplica en toda la app.
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';

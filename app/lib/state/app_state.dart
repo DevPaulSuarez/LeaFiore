@@ -1,3 +1,13 @@
+// ═══ app_state.dart · CEREBRO DE LA APP ═══
+// Guarda y carga todo (shared_preferences + fotos en el dispositivo) y calcula:
+//   dueIn()          → en cuántos días toca una tarea (negativo = atrasada).
+//   allTasks()       → todas las tareas pendientes ordenadas.
+//   complete/snooze  → completar o posponer una tarea.
+//   health()         → estado que se muestra en cada planta (sana, sed, plaga…).
+//   growthProgress() → % de avance hasta la cosecha/floración.
+//   addDays/daysBetween → cálculo de fechas por días (evita errores de horario de verano).
+// AppScope.of(context) da acceso al estado desde cualquier pantalla.
+
 import 'dart:convert';
 import 'dart:io';
 import 'dart:math';

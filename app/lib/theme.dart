@@ -1,6 +1,12 @@
+// ═══ theme.dart · COLORES Y TIPOGRAFÍA ═══
+// Clase C = paleta de toda la app. Cambia un color aquí y cambia en todas partes.
+// buildTheme() = tema general (fuente Inter, avisos/toasts).
+// serif() = fuente decorativa Cormorant Garamond (títulos de la intro).
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ✏️ MODIFICAR: colores de la app.
 class C {
   static const green900 = Color(0xFF1F3326);
   static const green800 = Color(0xFF2F4A36);

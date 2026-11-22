@@ -1,3 +1,8 @@
+// ═══ main.dart · PUNTO DE ARRANQUE ═══
+// Carga los datos guardados, prepara las notificaciones y abre la app.
+// Si el usuario ya pasó la intro abre Shell (pestañas); si no, IntroScreen.
+// Cambia aquí: el título de la app y la pantalla inicial.
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

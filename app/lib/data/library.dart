@@ -1,8 +1,17 @@
+// ═══ library.dart · DATOS DE LAS PLANTAS ═══
+// Aquí está TODA la información de las plantas. Para añadir una, copia un
+// PlantSpec(...) de la lista plantLibrary y cambia sus valores.
+//   PlantCategory → categorías (interior, hidroponía, huerto, suculenta, flor).
+//   CareTask      → tipos de tarea con su nombre e icono.
+//   Growth        → tiempo de cosecha/floración (min–max días, repetición).
+//   Hydro         → pH, EC y sistema para hidroponía.
+//   rooms         → lugares que se pueden elegir.   articles → guías de cuidado.
 /// Biblioteca de plantas con sus cuidados, tiempos de cosecha/floración
 /// y datos de hidroponía. Las frecuencias están en días (0 = no aplica).
 /// Los tiempos son orientativos: dependen de la variedad, la luz y la temperatura.
 library;
 
+// ✏️ MODIFICAR: categorías (nombre e icono).
 enum PlantCategory {
   interior('Interior', '🪴'),
   hidroponia('Hidroponía', '💧'),
@@ -72,6 +81,7 @@ class PlantSpec {
   bool get isHydro => hydro != null;
 }
 
+// ✏️ MODIFICAR: nombre e icono de cada tipo de tarea.
 enum CareTask {
   water('Regar', '💧'),
   harvest('Cosechar', '🧺'),
@@ -114,6 +124,7 @@ Map<CareTask, int> _care({
     };
 
 /// Cuidados típicos de un sistema hidropónico.
+// ✏️ MODIFICAR: cuidados por defecto de hidroponía (pH cada 3 días, solución cada 14, rellenar cada 3).
 final _hydroCare = _care(ph: 3, nutrients: 14, topUp: 3);
 
 /// "21–30 días", "3–4 meses", "2–3 años".
@@ -130,6 +141,7 @@ String fmtDuration(int min, int max) {
 
 const customSpecId = 'custom';
 
+// ✏️ MODIFICAR: valores de una planta «personalizada» (no está en la biblioteca).
 final PlantSpec customBase = PlantSpec(
   id: customSpecId,
   name: 'Mi planta',
@@ -149,6 +161,7 @@ final PlantSpec customBase = PlantSpec(
   ],
 );
 
+// ✏️ MODIFICAR: lista de plantas. Copia un PlantSpec(...) para añadir una nueva.
 final List<PlantSpec> plantLibrary = [
   // ===================== INTERIOR =====================
   PlantSpec(
@@ -577,6 +590,7 @@ final List<PlantSpec> plantLibrary = [
   ),
 ];
 
+// ✏️ MODIFICAR: lugares de la casa.
 const rooms = ['Sala', 'Dormitorio', 'Cocina', 'Baño', 'Oficina', 'Balcón', 'Jardín', 'Sistema hidropónico'];
 
 class Article {
@@ -584,6 +598,7 @@ class Article {
   const Article(this.title, this.tag, this.emoji, this.body);
 }
 
+// ✏️ MODIFICAR: guías de cuidado (título, etiqueta, emoji, texto).
 const articles = [
   Article('Cómo saber si tu planta necesita agua', 'Guía', '💧',
       'Mete el dedo 3–5 cm en el sustrato: si sale seco, riega. Levanta la maceta: si pesa poco, tiene sed. Las hojas lacias o curvadas también son señal. Riega a fondo hasta que salga agua por los agujeros y vacía el plato a los 15 minutos.'),

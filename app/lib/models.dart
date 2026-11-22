@@ -1,3 +1,12 @@
+// ═══ models.dart · MODELOS DE DATOS ═══
+// Cómo se guarda cada cosa del usuario:
+//   Plant       → una planta del jardín (apodo, lugar, foto, últimas tareas, historial).
+//   HistoryEntry→ una tarea completada (qué y cuándo).
+//   Diagnosis   → el resultado que devuelve la IA al analizar una foto.
+//   Scan        → un diagnóstico guardado (foto + resultado + planta asignada).
+//   ScanMode    → modos del escáner (planta / hoja / insecto) con sus textos.
+// Si añades un campo, añádelo también en toJson() y fromJson() para que se guarde.
+
 import 'data/library.dart';
 
 class HistoryEntry {
@@ -153,6 +162,7 @@ class Diagnosis {
       };
 }
 
+// ✏️ MODIFICAR: modos del escáner (nombre, icono y pista).
 enum ScanMode {
   planta('Planta', '🪴', 'Encuadra la planta completa con buena luz'),
   hoja('Hoja', '🍃', 'Acércate a la hoja afectada (anverso o envés)'),

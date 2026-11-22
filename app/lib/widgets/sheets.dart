@@ -1,3 +1,7 @@
+// ═══ sheets.dart · HOJAS EMERGENTES ═══
+//   showTaskSheet → al tocar una tarea: hecho / posponer 1-2 días / ver planta.
+//   showArticle   → leer una guía.   showGuides → lista de guías.
+
 import 'package:flutter/material.dart';
 
 import '../data/library.dart';

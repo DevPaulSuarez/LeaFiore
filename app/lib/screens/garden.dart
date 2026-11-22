@@ -1,3 +1,8 @@
+// ═══ garden.dart · PESTAÑA «MI JARDÍN» ═══
+// Muestra tus plantas en cuadrícula («Plantas») o agrupadas por lugar («Lugares»).
+// La tarjeta de cada planta es PlantCard (está en home.dart).
+// childAspectRatio controla la altura de las tarjetas de la cuadrícula.
+
 import 'package:flutter/material.dart';
 
 import '../state/app_state.dart';
@@ -60,7 +65,7 @@ class _GardenScreenState extends State<GardenScreen> {
                 crossAxisCount: 2,
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 12,
-                childAspectRatio: .54,
+                childAspectRatio: .54, // ✏️ más bajo = tarjetas más altas
               ),
               itemCount: plants.length,
               itemBuilder: (_, i) => PlantCard(plants[i], showCare: true),

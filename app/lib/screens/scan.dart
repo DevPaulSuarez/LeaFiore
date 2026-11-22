@@ -1,3 +1,10 @@
+// ═══ scan.dart · ESCÁNER (BOTÓN CENTRAL) ═══
+// Eliges modo (planta/hoja/insecto), la planta, y tomas o eliges una foto.
+// La envía a services/diagnosis.dart (o usa la demo si no hay clave de API),
+// guarda el resultado y abre result.dart.
+//   pickImage(maxWidth…, imageQuality) → tamaño/calidad de la foto enviada.
+//   _describe() → texto extra sobre la planta que se envía a la IA.
+
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -42,6 +49,7 @@ class _ScanScreenState extends State<ScanScreen> with SingleTickerProviderStateM
     final state = AppScope.read(context);
     final XFile? x;
     try {
+      // ✏️ MODIFICAR: tamaño y calidad de la foto que se envía.
       x = await ImagePicker().pickImage(source: source, maxWidth: 1568, maxHeight: 1568, imageQuality: 85);
     } catch (e) {
       if (mounted) toast(context, 'No se pudo abrir la cámara. Revisa los permisos.');

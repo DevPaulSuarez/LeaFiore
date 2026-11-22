@@ -1,3 +1,10 @@
+// ═══ library.dart · BIBLIOTECA Y AÑADIR PLANTA ═══
+//   LibraryScreen  → lista de las 47 plantas con filtros por categoría y buscador.
+//   showSpecDetail → hoja con la ficha de una especie (cuidados, cosecha, consejos).
+//   AddPlantScreen → formulario para añadir una planta a tu jardín
+//                    (foto, apodo, lugar, fecha de siembra, frecuencia de riego).
+// Los DATOS de las plantas no están aquí: están en data/library.dart.
+
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 

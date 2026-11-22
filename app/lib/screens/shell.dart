@@ -1,3 +1,10 @@
+// ═══ shell.dart · ESTRUCTURA PRINCIPAL Y BARRA INFERIOR ═══
+// Contiene las 4 pestañas (Inicio, Mi jardín, Cuidados, Perfil) y la barra
+// flotante de cristal con el botón de escanear en el centro.
+//   _tabBtn(...)  → cada botón de la barra (icono y texto ✏️).
+//   Shell.goTab() → cambiar de pestaña desde otra pantalla.
+//   openScan()    → abrir el escáner.   LeafPage → fondo para pantallas secundarias.
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -48,6 +55,7 @@ class _ShellState extends State<Shell> {
                 border: Border.all(color: C.glassBorder),
               ),
               child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+                // ✏️ MODIFICAR: iconos y nombres de la barra inferior.
                 _tabBtn(0, Icons.home_rounded, 'Inicio'),
                 _tabBtn(1, Icons.eco_rounded, 'Mi jardín'),
                 _ScanTab(onTap: () => openScan(context)),

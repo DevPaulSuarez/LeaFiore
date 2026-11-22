@@ -1,3 +1,10 @@
+// ═══ plant_detail.dart · FICHA DE UNA PLANTA DEL JARDÍN ═══
+// Foto, resumen (luz, agua, pH…), progreso de cosecha (_GrowthCard),
+// anillos de cuidados (_CareRing), botón principal (regar/cosechar/rellenar),
+// consejos, recordatorios activables, diagnósticos, historial y menú (editar/borrar).
+//   relevantTasks() → qué tareas se muestran según sea hidropónica o de tierra.
+//   pickSource()    → hoja para elegir cámara o galería.
+
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 

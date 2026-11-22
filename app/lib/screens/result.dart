@@ -1,3 +1,9 @@
+// ═══ result.dart · RESULTADO DEL DIAGNÓSTICO ═══
+// Muestra lo que devolvió la IA: estado, problema, confianza, gravedad,
+// qué hacer, causas, riego y prevención. Permite asignarlo a una planta,
+// programar una revisión a los 7 días o borrarlo.
+//   sev → textos de la gravedad.   _Block → cada tarjeta de sección.
+
 import 'package:flutter/material.dart';
 
 import '../models.dart';
@@ -23,6 +29,7 @@ class ResultScreen extends StatelessWidget {
     final r = s.result;
     final plant = state.plantById(s.plantId);
     final top = MediaQuery.of(context).padding.top;
+    // ✏️ MODIFICAR: textos de gravedad.
     const sev = {'ninguna': 'Ninguna', 'leve': 'Leve', 'moderada': 'Moderada', 'grave': 'Grave'};
     final icon = switch (r.status) {
       HealthStatus.sana => '✅',

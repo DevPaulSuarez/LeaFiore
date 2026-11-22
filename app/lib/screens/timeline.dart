@@ -1,3 +1,8 @@
+// ═══ timeline.dart · TIEMPOS DE CULTIVO ═══
+// Lista de todas las plantas con cosecha/floración, ordenadas de la más rápida
+// a la más lenta y agrupadas por rango (_buckets). La barra usa escala
+// logarítmica de 7 días a 5 años (_lo, _hi).
+
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -23,6 +28,7 @@ class TimelineScreen extends StatefulWidget {
 class _TimelineScreenState extends State<TimelineScreen> {
   PlantCategory? _cat;
 
+  // ✏️ MODIFICAR: grupos por duración (días máximos, título).
   static const _buckets = [
     (30, '⚡ Menos de 1 mes'),
     (90, '🌱 1 a 3 meses'),

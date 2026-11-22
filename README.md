@@ -2,6 +2,8 @@
 
 App de jardín para **Android e iOS**, hecha en Flutter. Te dice qué cuidados necesita cada planta y cuándo hacerlos, y diagnostica problemas a partir de una foto de la planta, de sus hojas o de los insectos que tenga.
 
+> 📘 **¿Quieres modificar algo?** Lee la [Guía del código](GUIA.md): explica qué hace cada archivo y tiene un índice de dónde cambiar cada cosa.
+
 ## Funciones
 
 - **Mi jardín**: tus plantas en cuadrícula o agrupadas por lugar (sala, baño, balcón, sistema hidropónico…).
